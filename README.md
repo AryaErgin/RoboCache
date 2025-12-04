@@ -14,6 +14,8 @@ npm run dev
 - `npm run build` — type-check and build for production.
 - `npm run preview` — preview the production build locally.
 
+If you see TypeScript errors like "Cannot find module '@react-google-maps/api' or 'firebase/*'", ensure dependencies are installed by running `npm install` (these packages are listed in `package.json`).
+
 ## Google Cloud/Firebase setup (free-friendly)
 - Enable **Firebase Hosting**, **Firestore**, and **Authentication** (Email/Password + Google provider) in your Firebase project (Spark/free tier is sufficient for demos).
 - Create a `.env` file with your keys (these placeholders are safe defaults but won't reach real services):

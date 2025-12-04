@@ -13,8 +13,8 @@ function Home() {
           <Badge label="Robotics treasure hunt" />
           <h1>Find, trade, and learn with robotics caches near you.</h1>
           <p>
-            Explore geocache-style drops filled with robot parts, coding puzzles, and build
-            challenges. Level up your skills while contributing to a global network of makers.
+            Explore geocache-style drops packed with surprise robotics rewards. No puzzles or
+            tasks—just follow the hint, claim the cache, and unlock XP toward badges.
           </p>
           <div className="hero-actions">
             <Button variant="secondary">
@@ -46,7 +46,7 @@ function Home() {
           <h2>How it works</h2>
           <ol>
             <li><strong>Explore:</strong> Scan the map for nearby robotics caches.</li>
-            <li><strong>Find:</strong> Follow hints, unlock the box, and claim a part or challenge.</li>
+            <li><strong>Find:</strong> Follow hints, open the cache, and reveal a mystery reward—no tasks required.</li>
             <li><strong>Log & Learn:</strong> Record your find, share notes, and earn XP toward badges.</li>
           </ol>
         </div>

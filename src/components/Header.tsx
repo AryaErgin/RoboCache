@@ -1,16 +1,25 @@
 import { Link, NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { onAuthStateChanged, signOut, type User } from 'firebase/auth';
 import styles from './Header.module.css';
 import logo from '../assets/logo.svg';
+import { auth } from '../utils/firebase';
 
 const navItems = [
   { label: 'Home', to: '/' },
   { label: 'Explore', to: '/explore' },
   { label: 'Create Cache', to: '/create' },
-  { label: 'Profile', to: '/profile' },
   { label: 'About', to: '/about' },
 ];
 
 function Header() {
+  const [user, setUser] = useState<User | null>(auth.currentUser);
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (current) => setUser(current));
+    return () => unsub();
+  }, []);
+
   return (
     <header className={styles.header}>
       <div className={styles.brand}>
@@ -29,9 +38,30 @@ function Header() {
             {item.label}
           </NavLink>
         ))}
+        {user && (
+          <NavLink
+            to="/profile"
+            className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
+          >
+            Profile
+          </NavLink>
+        )}
       </nav>
       <div className={styles.actions}>
-        <Link to="/auth" className={styles.authLink}>Login / Sign up</Link>
+        {user ? (
+          <>
+            <Link to="/profile" className={styles.authLink}>
+              Profile
+            </Link>
+            <button type="button" className={styles.authLink} onClick={() => signOut(auth)}>
+              Sign out
+            </button>
+          </>
+        ) : (
+          <Link to="/auth" className={styles.authLink}>
+            Login / Sign up
+          </Link>
+        )}
       </div>
     </header>
   );

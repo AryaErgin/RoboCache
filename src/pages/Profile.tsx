@@ -1,19 +1,52 @@
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { onAuthStateChanged, type User } from 'firebase/auth';
 import Badge from '../components/Badge';
 import CacheCard from '../components/CacheCard';
 import { caches } from '../utils/mockData';
+import { auth } from '../utils/firebase';
 import '../styles/pages/Profile.css';
 
 function Profile() {
+  const [user, setUser] = useState<User | null>(auth.currentUser);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
   const created = caches.slice(0, 2);
   const found = caches.slice(2, 4);
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (current) => {
+      setUser(current);
+      setLoading(false);
+    });
+    return () => unsub();
+  }, []);
+
+  useEffect(() => {
+    if (!loading && !user) {
+      navigate('/', { replace: true });
+    }
+  }, [loading, user, navigate]);
+
+  if (loading) {
+    return (
+      <div className="page profile-page">
+        <p className="muted">Checking your RoboCache account…</p>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return null;
+  }
 
   return (
     <div className="page profile-page">
       <header className="profile-header">
         <div>
           <p className="eyebrow">Maker profile</p>
-          <h1>Alex Robotics</h1>
-          <p className="lede">Mechanical specialist and high-school mentor. Exploring how open robotics can connect students to the field.</p>
+          <h1>{user.displayName || user.email}</h1>
+          <p className="lede">Mystery cache explorer. Rewards unlock only when you check in—keep the surprises going.</p>
           <div className="badges">
             <Badge label="Level 7" tone="success" />
             <Badge label="Mechanics" />

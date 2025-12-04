@@ -9,7 +9,7 @@ const initialForm = {
   location: '',
   category: '',
   difficulty: '',
-  tools: '',
+  rewardSummary: '',
   safety: '',
   education: '',
   coordinates: '',
@@ -36,11 +36,12 @@ function CreateCache() {
         location: form.location,
         category: form.category || 'General',
         difficulty: form.difficulty || 'Easy',
-        tools: form.tools ? form.tools.split(',').map((item) => item.trim()) : [],
-        description: form.education || 'Community robotics cache',
+        rewardSummary: form.rewardSummary || 'Surprise reward revealed on check-in.',
+        description: form.education || 'A surprise robotics drop—no tasks required, rewards unlock when you arrive.',
         hint: form.safety || 'See onsite safety note',
-        education: form.education || 'Share a robotics learning takeaway.',
+        education: form.education || 'Share a robotics learning takeaway without spoilers.',
         coordinates: { lat: lat || 0, lng: lng || 0 },
+        taskFree: true,
       });
       setStatus('Cache saved to Google Cloud Firestore.');
       setForm(initialForm);
@@ -55,7 +56,7 @@ function CreateCache() {
       <header className="page-header">
         <p className="eyebrow">Create</p>
         <h1>Publish a robotics cache</h1>
-        <p className="lede">Share a robotics part or challenge with coordinates, safety notes, and an educational takeaway.</p>
+        <p className="lede">Share a surprise robotics reward with coordinates, safety notes, and an educational takeaway—no tasks or spoilers.</p>
       </header>
 
       <form className="cache-form" onSubmit={handleSubmit}>
@@ -64,7 +65,7 @@ function CreateCache() {
         <FormInput label="Coordinates" placeholder="40.7128,-74.0060" value={form.coordinates} onChange={(e) => update('coordinates', e.target.value)} />
         <FormInput label="Category" placeholder="Electronics, mechanical, programming" value={form.category} onChange={(e) => update('category', e.target.value)} />
         <FormInput label="Difficulty" placeholder="Easy / Medium / Hard" value={form.difficulty} onChange={(e) => update('difficulty', e.target.value)} />
-        <FormInput label="Required tools" placeholder="Multimeter, Allen keys" value={form.tools} onChange={(e) => update('tools', e.target.value)} />
+        <FormInput label="Reward hint (no spoilers)" placeholder="Mystery reward revealed on check-in" value={form.rewardSummary} onChange={(e) => update('rewardSummary', e.target.value)} />
         <FormInput label="Safety note" value={form.safety} onChange={(e) => update('safety', e.target.value)} />
         <FormInput label="Educational note" value={form.education} onChange={(e) => update('education', e.target.value)} />
         <div className="form-actions">

@@ -55,13 +55,10 @@ function CacheDetails() {
       </header>
 
       <section className="cache-section">
-        <h3>What's inside</h3>
+        <h3>Rewards</h3>
+        <p>{activeCache.rewardSummary}</p>
+        <p className="muted">No tasks or swaps required—simply find the cache, check in, and your reward is revealed.</p>
         <p>{activeCache.description}</p>
-        <ul>
-          {activeCache.tools.map((tool) => (
-            <li key={tool}>{tool}</li>
-          ))}
-        </ul>
       </section>
 
       <section className="cache-section">

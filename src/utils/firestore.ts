@@ -1,4 +1,13 @@
-import { collection, addDoc, getDocs, getDoc, doc, Timestamp } from 'firebase/firestore';
+import {
+  collection,
+  addDoc,
+  getDocs,
+  getDoc,
+  doc,
+  Timestamp,
+  type DocumentData,
+  type QueryDocumentSnapshot,
+} from 'firebase/firestore';
 import type { Cache } from './types';
 import { db } from './firebase';
 
@@ -6,7 +15,7 @@ const cachesCollection = collection(db, 'caches');
 
 export async function fetchCaches(): Promise<Cache[]> {
   const snapshot = await getDocs(cachesCollection);
-  return snapshot.docs.map((document) => {
+  return snapshot.docs.map((document: QueryDocumentSnapshot<DocumentData>) => {
     const data = document.data();
     return {
       id: document.id,
@@ -14,12 +23,13 @@ export async function fetchCaches(): Promise<Cache[]> {
       location: data.location ?? 'Unknown',
       category: data.category ?? 'General',
       difficulty: data.difficulty ?? 'Easy',
-      tools: data.tools ?? [],
+      rewardSummary: data.rewardSummary ?? 'Surprise reward revealed on check-in.',
       description: data.description ?? 'No description yet',
       hint: data.hint ?? 'No hint provided',
       education: data.education ?? 'Educational note coming soon',
       coordinates: data.coordinates ?? { lat: 0, lng: 0 },
       xp: data.xp ?? 50,
+      taskFree: data.taskFree ?? true,
       createdAt: data.createdAt ?? Timestamp.now(),
     } as Cache;
   });
@@ -36,12 +46,13 @@ export async function fetchCacheById(id: string): Promise<Cache | null> {
     location: data.location,
     category: data.category,
     difficulty: data.difficulty,
-    tools: data.tools ?? [],
+    rewardSummary: data.rewardSummary ?? 'Surprise reward revealed on check-in.',
     description: data.description,
     hint: data.hint,
     education: data.education,
     coordinates: data.coordinates,
     xp: data.xp ?? 50,
+    taskFree: data.taskFree ?? true,
     createdAt: data.createdAt ?? Timestamp.now(),
   } as Cache;
 }

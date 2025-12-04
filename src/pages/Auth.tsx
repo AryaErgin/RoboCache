@@ -1,5 +1,6 @@
-import { FormEvent, useState } from 'react';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { FormEvent, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import Button from '../components/Button';
 import FormInput from '../components/FormInput';
 import { auth, googleProvider } from '../utils/firebase';
@@ -10,6 +11,16 @@ function Auth() {
   const [password, setPassword] = useState('');
   const [mode, setMode] = useState<'login' | 'signup'>('login');
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (current) => {
+      if (current) {
+        navigate('/profile', { replace: true });
+      }
+    });
+    return () => unsub();
+  }, [navigate]);
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();

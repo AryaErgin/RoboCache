@@ -45,7 +45,7 @@ function Explore() {
         <div>
           <p className="eyebrow">Map & filters</p>
           <h1>Explore robotics caches near you</h1>
-          <p className="lede">Browse community drops, challenges, and parts waiting to be discovered.</p>
+          <p className="lede">Browse community drops with mystery robotics rewards—no tasks, no spoilers, just discover and claim.</p>
         </div>
       </div>
 

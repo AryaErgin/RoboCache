@@ -20,7 +20,7 @@ function CacheCard({ cache }: CacheCardProps) {
       <div className={styles.meta}>
         <span>Difficulty: {cache.difficulty}</span>
         <span>XP: {cache.xp}</span>
-        <span>Tools: {cache.tools.join(', ')}</span>
+        <span>Reward: {cache.rewardSummary}</span>
       </div>
       <div className={styles.actions}>
         <Button variant="secondary">

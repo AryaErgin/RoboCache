@@ -4,12 +4,13 @@ export type Cache = {
   location: string;
   category: string;
   difficulty: string;
-  tools: string[];
+  rewardSummary: string;
   description: string;
   hint: string;
   education: string;
   coordinates: { lat: number; lng: number };
   xp: number;
+  taskFree?: boolean;
   createdAt?: unknown;
 };
 
