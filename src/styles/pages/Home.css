@@ -1,0 +1,16 @@
+.home-page .hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; align-items: center; background: var(--color-grey-800); border: 1px solid var(--color-border); border-radius: 16px; padding: 2rem; box-shadow: 0 16px 32px rgba(0,0,0,0.35); }
+.hero-actions { display: flex; gap: 0.75rem; margin-top: 1rem; flex-wrap: wrap; }
+.hero-card { background: var(--color-black); border: 1px solid var(--color-border); border-radius: 12px; padding: 1rem; display: grid; gap: 0.75rem; }
+.stat { display: flex; align-items: center; justify-content: space-between; }
+.label { color: #c5c5c5; font-size: 0.9rem; }
+.value { font-weight: 800; color: var(--color-yellow); font-size: 1.2rem; }
+
+.how-it-works { background: var(--color-grey-800); border: 1px solid var(--color-border); border-radius: 12px; padding: 1.5rem; }
+.how-it-works ol { margin: 0; padding-left: 1.25rem; color: #e7e7e7; }
+
+.featured { margin-top: 2rem; }
+.section-header { align-items: flex-end; }
+
+@media (max-width: 768px) {
+  .home-page .hero { padding: 1.25rem; }
+}

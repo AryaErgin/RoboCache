@@ -1,0 +1,58 @@
+import type { Cache } from './types';
+
+export const caches: Cache[] = [
+  {
+    id: 'servo-spot',
+    title: 'Servo Tuning Station',
+    location: 'Seattle, WA',
+    category: 'Electronics',
+    difficulty: 'Medium',
+    tools: ['Multimeter', 'Small screwdriver'],
+    description: 'Swap a micro-servo and learn how PWM signals control torque.',
+    hint: 'Under the bench near the community garden gate.',
+    education: 'Includes a diagram on pulse widths and how to avoid brownouts.',
+    coordinates: { lat: 47.61, lng: -122.33 },
+    xp: 120,
+  },
+  {
+    id: 'gear-hub',
+    title: 'Planetary Gear Puzzle',
+    location: 'Austin, TX',
+    category: 'Mechanical',
+    difficulty: 'Hard',
+    tools: ['Allen keys'],
+    description: 'Trade a gear set and reassemble the puzzle to unlock the cache.',
+    hint: 'Magnetic panel under the pedestrian bridge.',
+    education: 'Shows efficiency differences between spur and planetary gearing.',
+    coordinates: { lat: 30.27, lng: -97.74 },
+    xp: 200,
+  },
+  {
+    id: 'vision-quest',
+    title: 'Vision Quest Calibration',
+    location: 'Boston, MA',
+    category: 'Programming',
+    difficulty: 'Medium',
+    tools: ['Laptop', 'USB-C cable'],
+    description: 'Pick up a USB camera and run the calibration script to earn the clue.',
+    hint: 'Look for the yellow sticker near the maker-space lockers.',
+    education: 'Includes calibration patterns and code comments for camera matrices.',
+    coordinates: { lat: 42.36, lng: -71.06 },
+    xp: 150,
+  },
+  {
+    id: 'battery-care',
+    title: 'Battery Safety Drop',
+    location: 'Denver, CO',
+    category: 'Safety',
+    difficulty: 'Easy',
+    tools: ['Gloves'],
+    description: 'Learn proper LiPo handling and swap in a charged 3S pack.',
+    hint: 'Inside the maintenance locker with caution tape.',
+    education: 'Walkthrough on charge cycles, storage voltage, and disposal links.',
+    coordinates: { lat: 39.74, lng: -104.99 },
+    xp: 90,
+  },
+];
+
+export const featuredCaches = caches.slice(0, 3);
