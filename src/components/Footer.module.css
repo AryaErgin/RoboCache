@@ -1,0 +1,6 @@
+.footer { background: var(--color-grey-800); border-top: 1px solid var(--color-border); padding: 2rem 1.5rem; color: var(--color-white); }
+.columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+.footer ul { list-style: none; padding: 0; margin: 0; }
+.footer li { margin-bottom: 0.35rem; }
+.footer a { color: var(--color-yellow); }
+.meta { margin-top: 1.5rem; font-size: 0.9rem; color: #c5c5c5; }

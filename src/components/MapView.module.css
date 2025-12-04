@@ -1,0 +1,4 @@
+.map { background: linear-gradient(145deg, #0b0b0b, #1a1a1a); border: 1px solid var(--color-border); border-radius: 14px; padding: 1rem; min-height: 320px; }
+.mapCanvas { width: 100%; height: 360px; border-radius: 12px; overflow: hidden; }
+.mapFallback { color: var(--color-yellow); padding: 1rem; text-align: center; background: var(--color-grey-700); border-radius: 12px; border: 1px dashed var(--color-border); }
+.markerLabel { background: var(--color-grey-900); color: var(--color-yellow); padding: 2px 6px; border-radius: 6px; font-weight: 600; font-size: 12px; }
