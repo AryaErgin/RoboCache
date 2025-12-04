@@ -10,6 +10,7 @@ export type Cache = {
   education: string;
   coordinates: { lat: number; lng: number };
   xp: number;
+  createdAt?: unknown;
 };
 
 export type CacheFilters = {

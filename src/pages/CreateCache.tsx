@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react';
 import Button from '../components/Button';
 import FormInput from '../components/FormInput';
+import { createCache } from '../utils/firestore';
 import '../styles/pages/CreateCache.css';
 
 const initialForm = {
@@ -22,13 +23,31 @@ function CreateCache() {
     setForm({ ...form, [key]: value });
   };
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     if (!form.title || !form.location) {
       setStatus('Please add a title and location to publish a cache.');
       return;
     }
-    setStatus('Cache draft saved locally. Connect API to publish.');
+    try {
+      const [lat, lng] = form.coordinates.split(',').map((value) => Number(value.trim()));
+      await createCache({
+        title: form.title,
+        location: form.location,
+        category: form.category || 'General',
+        difficulty: form.difficulty || 'Easy',
+        tools: form.tools ? form.tools.split(',').map((item) => item.trim()) : [],
+        description: form.education || 'Community robotics cache',
+        hint: form.safety || 'See onsite safety note',
+        education: form.education || 'Share a robotics learning takeaway.',
+        coordinates: { lat: lat || 0, lng: lng || 0 },
+      });
+      setStatus('Cache saved to Google Cloud Firestore.');
+      setForm(initialForm);
+    } catch (error) {
+      console.error(error);
+      setStatus('Could not save to Firestore. Check your Google credentials and retry.');
+    }
   };
 
   return (

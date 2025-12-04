@@ -1,23 +1,43 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import CacheCard from '../components/CacheCard';
 import FilterBar from '../components/FilterBar';
 import MapView from '../components/MapView';
-import { caches } from '../utils/mockData';
-import type { CacheFilters } from '../utils/types';
+import { fetchCaches } from '../utils/firestore';
+import { caches as fallbackCaches } from '../utils/mockData';
+import type { Cache, CacheFilters } from '../utils/types';
 import '../styles/pages/Explore.css';
 
 const defaultFilters: CacheFilters = { location: '', category: '', difficulty: '' };
 
 function Explore() {
+  const [cacheList, setCacheList] = useState<Cache[]>(fallbackCaches);
+  const [status, setStatus] = useState('Loading live caches from Firestore…');
   const [filters, setFilters] = useState<CacheFilters>(defaultFilters);
 
+  useEffect(() => {
+    fetchCaches()
+      .then((data) => {
+        if (data.length) {
+          setCacheList(data);
+          setStatus('Loaded from Google Cloud Firestore.');
+        } else {
+          setCacheList(fallbackCaches);
+          setStatus('No cloud caches found yet. Showing local examples.');
+        }
+      })
+      .catch(() => {
+        setCacheList(fallbackCaches);
+        setStatus('Firestore unavailable. Showing local examples.');
+      });
+  }, []);
+
   const filtered = useMemo(() =>
-    caches.filter((cache) => {
+    cacheList.filter((cache) => {
       const matchesLocation = cache.location.toLowerCase().includes(filters.location.toLowerCase());
       const matchesCategory = cache.category.toLowerCase().includes(filters.category.toLowerCase());
       const matchesDifficulty = cache.difficulty.toLowerCase().includes(filters.difficulty.toLowerCase());
       return matchesLocation && matchesCategory && matchesDifficulty;
-    }), [filters]);
+    }), [cacheList, filters]);
 
   return (
     <div className="page explore-page">
@@ -34,6 +54,7 @@ function Explore() {
       <div className="explore-layout">
         <div className="map-column">
           <MapView caches={filtered} />
+          <p className="muted status-text">{status}</p>
         </div>
         <div className="list-column">
           {filtered.map((cache) => (
