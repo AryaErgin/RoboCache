@@ -41,7 +41,7 @@ function Profile() {
   }
 
   return (
-    <div className="page profile-page">
+    <div className="page profile-page" style={{ position: 'relative', minHeight: '80vh' }}>
       <header className="profile-header">
         <div>
           <p className="eyebrow">Maker profile</p>
@@ -92,6 +92,27 @@ function Profile() {
           ))}
         </div>
       </section>
+
+      <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', marginTop: 48 }}>
+        <button
+          onClick={() => auth.signOut()}
+          style={{
+            padding: '14px 40px',
+            background: 'linear-gradient(90deg, #ff4b2b 0%, #ff416c 100%)',
+            color: '#fff',
+            border: 'none',
+            borderRadius: 24,
+            fontWeight: 600,
+            fontSize: 18,
+            boxShadow: '0 2px 12px rgba(255,65,108,0.15)',
+            cursor: 'pointer',
+            transition: 'background 0.2s',
+            letterSpacing: 1,
+          }}
+        >
+          Sign out
+        </button>
+      </div>
     </div>
   );
 }

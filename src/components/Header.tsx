@@ -48,16 +48,7 @@ function Header() {
         )}
       </nav>
       <div className={styles.actions}>
-        {user ? (
-          <>
-            <Link to="/profile" className={styles.authLink}>
-              Profile
-            </Link>
-            <button type="button" className={styles.authLink} onClick={() => signOut(auth)}>
-              Sign out
-            </button>
-          </>
-        ) : (
+        {!user && (
           <Link to="/auth" className={styles.authLink}>
             Login / Sign up
           </Link>
