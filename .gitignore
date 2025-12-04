@@ -6,3 +6,9 @@ npm-debug.log*
 tsconfig.*.tsbuildinfo
 vite.config.js
 vite.config.d.ts
+.env
+.firebaserc
+firebase.json
+firestore.indexes.json
+firestore.rules
+storage.rules
