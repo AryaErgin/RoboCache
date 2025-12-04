@@ -49,11 +49,18 @@ function Header() {
       </nav>
       <div className={styles.actions}>
         {user ? (
-          <button type="button" className={styles.authLink} onClick={() => signOut(auth)}>
-            Sign out
-          </button>
+          <>
+            <Link to="/profile" className={styles.authLink}>
+              Profile
+            </Link>
+            <button type="button" className={styles.authLink} onClick={() => signOut(auth)}>
+              Sign out
+            </button>
+          </>
         ) : (
-          <Link to="/auth" className={styles.authLink}>Login / Sign up</Link>
+          <Link to="/auth" className={styles.authLink}>
+            Login / Sign up
+          </Link>
         )}
       </div>
     </header>

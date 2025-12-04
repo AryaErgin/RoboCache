@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { onAuthStateChanged, type User } from 'firebase/auth';
 import Badge from '../components/Badge';
 import CacheCard from '../components/CacheCard';
@@ -10,6 +10,7 @@ import '../styles/pages/Profile.css';
 function Profile() {
   const [user, setUser] = useState<User | null>(auth.currentUser);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
   const created = caches.slice(0, 2);
   const found = caches.slice(2, 4);
 
@@ -21,6 +22,12 @@ function Profile() {
     return () => unsub();
   }, []);
 
+  useEffect(() => {
+    if (!loading && !user) {
+      navigate('/', { replace: true });
+    }
+  }, [loading, user, navigate]);
+
   if (loading) {
     return (
       <div className="page profile-page">
@@ -30,18 +37,7 @@ function Profile() {
   }
 
   if (!user) {
-    return (
-      <div className="page profile-page">
-        <header className="profile-header">
-          <div>
-            <p className="eyebrow">Profile locked</p>
-            <h1>No account detected</h1>
-            <p className="lede">Create an account or sign in to view your rewards, XP, and cache history.</p>
-          </div>
-        </header>
-        <Link to="/auth" className="section-link">Go to login / sign up</Link>
-      </div>
-    );
+    return null;
   }
 
   return (
