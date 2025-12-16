@@ -1,0 +1,18 @@
+.header { background: var(--color-grey-800); border-bottom: 1px solid var(--color-border); padding: 0.75rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; position: sticky; top: 0; z-index: 10; }
+.brand { display: flex; align-items: center; gap: 0.75rem; }
+.logo { width: 36px; height: 36px; }
+.title { font-weight: 700; color: var(--color-white); letter-spacing: 0.02em; }
+
+.nav { display: flex; align-items: center; gap: 1rem; }
+.navItem { color: var(--color-white); padding: 0.35rem 0.6rem; border-radius: 6px; font-weight: 600; }
+.navItem:hover { background: var(--color-grey-600); }
+.active { background: var(--color-yellow); color: var(--color-black); }
+
+.actions { display: flex; align-items: center; }
+.authLink { color: var(--color-yellow); font-weight: 600; }
+
+.logoLink { display: inline-flex; align-items: center; gap: 0.5rem; }
+
+@media (max-width: 900px) {
+  .nav { display: none; }
+}
