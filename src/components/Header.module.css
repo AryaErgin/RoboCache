@@ -1,4 +1,4 @@
-.header { background: var(--color-grey-800); border-bottom: 1px solid var(--color-border); padding: 0.75rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; position: sticky; top: 0; z-index: 10; }
+.header { background: var(--color-grey-800); border-bottom: 1px solid var(--color-border); padding: 0.75rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; position: sticky; top: 0; z-index: 10; margin-bottom: 1rem; }
 .brand { display: flex; align-items: center; gap: 0.75rem; }
 .logo { width: 36px; height: 36px; }
 .title { font-weight: 700; color: var(--color-white); letter-spacing: 0.02em; }
@@ -8,8 +8,11 @@
 .navItem:hover { background: var(--color-grey-600); }
 .active { background: var(--color-yellow); color: var(--color-black); }
 
-.actions { display: flex; align-items: center; }
+.actions { display: flex; align-items: center; gap: 1rem; }
 .authLink { color: var(--color-yellow); font-weight: 600; }
+.integraLogo { display: flex; gap: 0.5rem; align-items: center; text-decoration: none; }
+.integraImg { height: 32px; width: auto; cursor: pointer; transition: opacity 0.2s; }
+.integraImg:hover { opacity: 0.8; }
 
 .logoLink { display: inline-flex; align-items: center; gap: 0.5rem; }
 

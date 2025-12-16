@@ -9,6 +9,7 @@ import Auth from './pages/Auth';
 import About from './pages/About';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+import Robocaching101 from './pages/Robocaching101';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/auth" element={<Auth />} />
         <Route path="/about" element={<About />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/robocaching-101" element={<Robocaching101 />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </MainLayout>

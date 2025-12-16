@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { onAuthStateChanged, signOut, type User } from 'firebase/auth';
 import styles from './Header.module.css';
 import logo from '../assets/cachelogo.png';
+import integra1 from '../assets/integra (1).png';
+import integra2 from '../assets/integra (2).png';
 import { auth } from '../utils/firebase';
 
 const navItems = [
@@ -53,6 +55,10 @@ function Header() {
             Login / Sign up
           </Link>
         )}
+        <a href="https://team3646.com" target="_blank" rel="noopener noreferrer" className={styles.integraLogo}>
+          <img src={integra1} alt="integra 1" className={styles.integraImg} />
+          <img src={integra2} alt="integra 2" className={styles.integraImg} />
+        </a>
       </div>
     </header>
   );

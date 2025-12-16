@@ -6,6 +6,9 @@ import Badge from '../components/Badge';
 import { featuredCaches as fallbackFeatured } from '../utils/mockData';
 import { fetchCaches } from '../utils/firestore';
 import type { Cache } from '../utils/types';
+import stepExplore from '../assets/step-explore.svg';
+import stepFind from '../assets/step-find.svg';
+import stepLog from '../assets/step-log.svg';
 import '../styles/pages/Home.css';
 
 function Home() {
@@ -30,13 +33,31 @@ function Home() {
       </section>
 
       <section className="section how-it-works">
-        <div>
-          <h2>How it works</h2>
-          <ol>
-            <li><strong>Explore:</strong> Scan the map for nearby robotics caches.</li>
-            <li><strong>Find:</strong> Follow hints, open the cache, and reveal a mystery reward.</li>
-            <li><strong>Log & Learn:</strong> Record your find, share notes, and earn XP toward badges.</li>
-          </ol>
+        <h2>How it works</h2>
+        <div className="steps-grid">
+          <div className="step">
+            <div className="step-icon">
+              <img src={stepExplore} alt="Create an account" />
+            </div>
+            <h3>Create an account</h3>
+            <p>Sign up to track your finds, create caches, and earn XP.</p>
+          </div>
+
+          <div className="step">
+            <div className="step-icon">
+              <img src={stepFind} alt="Find & trade" />
+            </div>
+            <h3>Find & trade</h3>
+            <p>Locate the cache, take an item, and leave a robotics piece in return.</p>
+          </div>
+
+          <div className="step">
+            <div className="step-icon">
+              <img src={stepLog} alt="Log & Learn" />
+            </div>
+            <h3>Log & Learn</h3>
+            <p>Record your find, share notes, and earn XP toward badges.</p>
+          </div>
         </div>
       </section>
 
@@ -46,6 +67,19 @@ function Home() {
           <Link to="/explore" className="section-link">See all</Link>
         </div>
         <FeaturedGrid />
+      </section>
+
+      <section className="section learn-preview">
+        <Link to="/robocaching-101" className="learn-box">
+          <div className="learn-box-media">
+            <img src="/assets/filler.svg" alt="Learn geocaching" />
+          </div>
+          <div className="learn-box-body">
+            <h3>Robocaching 101</h3>
+            <p>New to RoboCache? Learn the basics: how to find caches, trade fairly, and log your finds.</p>
+            <span className="learn-box-cta">Read the guide →</span>
+          </div>
+        </Link>
       </section>
     </div>
   );

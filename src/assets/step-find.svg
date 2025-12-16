@@ -1,0 +1,20 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradFind" x1="20" y1="18" x2="150" y2="142" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF9D66" />
+      <stop offset="0.45" stop-color="#FF6FB1" />
+      <stop offset="1" stop-color="#8B6CFF" />
+    </linearGradient>
+    <radialGradient id="glowFind" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(80 82) rotate(90) scale(78)">
+      <stop stop-color="#FFD8F1" stop-opacity="0.5" />
+      <stop offset="1" stop-color="#0E0B16" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect x="8" y="8" width="144" height="144" rx="24" fill="#120F1F" />
+  <rect x="8" y="8" width="144" height="144" rx="24" fill="url(#glowFind)" />
+  <path d="M80 34C99.8823 34 116 50.1177 116 70C116 97 80 126 80 126C80 126 44 97 44 70C44 50.1177 60.1177 34 80 34Z" fill="#1A1628" stroke="url(#gradFind)" stroke-width="6" />
+  <circle cx="80" cy="70" r="23" fill="#1A1628" stroke="#FFEEF9" stroke-width="2" />
+  <path d="M80 50C69.5066 50 61 58.5066 61 69C61 79.4934 69.5066 88 80 88C90.4934 88 99 79.4934 99 69C99 58.5066 90.4934 50 80 50Z" fill="url(#gradFind)" />
+  <path d="M92 92L115 115" stroke="#FF9D66" stroke-width="6" stroke-linecap="round" />
+  <circle cx="116" cy="116" r="7" fill="#FF6FB1" />
+</svg>
