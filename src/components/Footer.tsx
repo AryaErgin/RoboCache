@@ -21,12 +21,11 @@ function Footer() {
           <h5>Support</h5>
           <ul>
             <li><a href="/contact">Contact</a></li>
-            <li><a href="/contact">Report an issue</a></li>
             <li><a href="/auth">Login</a></li>
           </ul>
         </div>
       </div>
-      <div className={styles.meta}>© {new Date().getFullYear()} RoboCache. Built for makers.</div>
+      <div className={styles.meta}>© {new Date().getFullYear()} RoboCache. Built by <a href="https://team3646.com/" target="_blank" rel="noopener noreferrer">INTEGRA 3646</a>.</div>
     </footer>
   );
 }

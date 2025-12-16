@@ -24,20 +24,6 @@ function Home() {
             </Button>
           </div>
         </div>
-        <div className="hero-card">
-          <div className="stat">
-            <span className="label">Active caches</span>
-            <span className="value">128</span>
-          </div>
-          <div className="stat">
-            <span className="label">Parts traded</span>
-            <span className="value">3.2k</span>
-          </div>
-          <div className="stat">
-            <span className="label">Mentors</span>
-            <span className="value">420</span>
-          </div>
-        </div>
       </section>
 
       <section className="section how-it-works">

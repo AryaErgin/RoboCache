@@ -18,7 +18,6 @@ function FilterBar({ filters, onChange, onReset }: FilterBarProps) {
     <div className={styles.bar}>
       <FormInput label="Location" value={filters.location} placeholder="City or coordinates" onChange={(e) => update('location', e.target.value)} />
       <FormInput label="Category" value={filters.category} placeholder="Electronics, mechanical..." onChange={(e) => update('category', e.target.value)} />
-      <FormInput label="Difficulty" value={filters.difficulty} placeholder="Easy, Medium, Hard" onChange={(e) => update('difficulty', e.target.value)} />
       <div className={styles.actions}>
         <Button variant="secondary" type="button">Search</Button>
         <Button variant="ghost" type="button" onClick={onReset}>Reset</Button>

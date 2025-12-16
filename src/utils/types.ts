@@ -3,7 +3,8 @@ export type Cache = {
   title: string;
   location: string;
   category: string;
-  difficulty: string;
+  lastLoggedBy?: string;
+  lastLoggedAt?: unknown;
   rewardSummary: string;
   description: string;
   hint: string;
@@ -17,5 +18,4 @@ export type Cache = {
 export type CacheFilters = {
   location: string;
   category: string;
-  difficulty: string;
 };

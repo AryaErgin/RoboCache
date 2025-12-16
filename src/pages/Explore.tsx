@@ -7,7 +7,7 @@ import { caches as fallbackCaches } from '../utils/mockData';
 import type { Cache, CacheFilters } from '../utils/types';
 import '../styles/pages/Explore.css';
 
-const defaultFilters: CacheFilters = { location: '', category: '', difficulty: '' };
+const defaultFilters: CacheFilters = { location: '', category: ''};
 
 function Explore() {
   const [cacheList, setCacheList] = useState<Cache[]>(fallbackCaches);
@@ -35,8 +35,7 @@ function Explore() {
     cacheList.filter((cache) => {
       const matchesLocation = cache.location.toLowerCase().includes(filters.location.toLowerCase());
       const matchesCategory = cache.category.toLowerCase().includes(filters.category.toLowerCase());
-      const matchesDifficulty = cache.difficulty.toLowerCase().includes(filters.difficulty.toLowerCase());
-      return matchesLocation && matchesCategory && matchesDifficulty;
+      return matchesLocation && matchesCategory
     }), [cacheList, filters]);
 
   return (
@@ -45,7 +44,7 @@ function Explore() {
         <div>
           <p className="eyebrow">Map & filters</p>
           <h1>Explore robotics caches near you</h1>
-          <p className="lede">Browse community drops with mystery robotics rewards—no tasks, no spoilers, just discover and claim.</p>
+          <p className="lede">Browse community drops with mystery robotics rewards, just discover and claim.</p>
         </div>
       </div>
 

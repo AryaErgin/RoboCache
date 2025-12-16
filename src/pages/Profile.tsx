@@ -5,6 +5,7 @@ import Badge from '../components/Badge';
 import CacheCard from '../components/CacheCard';
 import { caches } from '../utils/mockData';
 import { auth } from '../utils/firebase';
+import { fetchUserStats } from '../utils/firestore';
 import '../styles/pages/Profile.css';
 
 function Profile() {
@@ -13,6 +14,7 @@ function Profile() {
   const navigate = useNavigate();
   const created = caches.slice(0, 2);
   const found = caches.slice(2, 4);
+  const [stats, setStats] = useState<{ foundCount: number; createdCount: number; xp: number } | null>(null);
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (current) => {
@@ -21,6 +23,16 @@ function Profile() {
     });
     return () => unsub();
   }, []);
+
+  useEffect(() => {
+    if (user) {
+      fetchUserStats(user.uid).then((s) => {
+        if (s) setStats({ foundCount: s.foundCount ?? 0, createdCount: s.createdCount ?? 0, xp: s.xp ?? 0 });
+      }).catch(() => {
+        setStats(null);
+      });
+    }
+  }, [user]);
 
   useEffect(() => {
     if (!loading && !user) {
@@ -56,15 +68,15 @@ function Profile() {
         <div className="stats">
           <div>
             <span className="label">Caches found</span>
-            <span className="value">22</span>
+            <span className="value">{stats ? stats.foundCount : '—'}</span>
           </div>
           <div>
             <span className="label">Caches created</span>
-            <span className="value">5</span>
+            <span className="value">{stats ? stats.createdCount : created.length}</span>
           </div>
           <div>
             <span className="label">XP</span>
-            <span className="value">6,450</span>
+            <span className="value">{stats ? stats.xp : '—'}</span>
           </div>
         </div>
       </header>
