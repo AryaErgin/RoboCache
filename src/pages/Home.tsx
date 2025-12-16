@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import Button from '../components/Button';
 import CacheCard from '../components/CacheCard';
 import Badge from '../components/Badge';
-import { featuredCaches } from '../utils/mockData';
+import { featuredCaches as fallbackFeatured } from '../utils/mockData';
+import { fetchCaches } from '../utils/firestore';
+import type { Cache } from '../utils/types';
 import '../styles/pages/Home.css';
 
 function Home() {
@@ -42,12 +45,30 @@ function Home() {
           <h2>Featured robotics caches</h2>
           <Link to="/explore" className="section-link">See all</Link>
         </div>
-        <div className="cache-grid">
-          {featuredCaches.map((cache) => (
-            <CacheCard key={cache.id} cache={cache} />
-          ))}
-        </div>
+        <FeaturedGrid />
       </section>
+    </div>
+  );
+}
+
+function FeaturedGrid() {
+  const [featured, setFeatured] = useState<Cache[]>(fallbackFeatured);
+
+  useEffect(() => {
+    fetchCaches()
+      .then((data) => {
+        if (data && data.length > 0) setFeatured(data.slice(0, 3));
+      })
+      .catch(() => {
+        // keep local fallback
+      });
+  }, []);
+
+  return (
+    <div className="cache-grid">
+      {featured.map((cache) => (
+        <CacheCard key={cache.id} cache={cache} />
+      ))}
     </div>
   );
 }

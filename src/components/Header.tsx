@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { onAuthStateChanged, signOut, type User } from 'firebase/auth';
 import styles from './Header.module.css';
-import logo from '../assets/logo.svg';
+import logo from '../assets/cachelogo.png';
 import { auth } from '../utils/firebase';
 
 const navItems = [

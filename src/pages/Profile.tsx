@@ -68,7 +68,7 @@ function Profile() {
         <div className="stats">
           <div>
             <span className="label">Caches found</span>
-            <span className="value">{stats ? stats.foundCount : '—'}</span>
+            <span className="value">{stats ? stats.foundCount : '0'}</span>
           </div>
           <div>
             <span className="label">Caches created</span>
@@ -76,7 +76,7 @@ function Profile() {
           </div>
           <div>
             <span className="label">XP</span>
-            <span className="value">{stats ? stats.xp : '—'}</span>
+            <span className="value">{stats ? stats.xp : '0'}</span>
           </div>
         </div>
       </header>
