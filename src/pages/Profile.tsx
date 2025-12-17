@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { onAuthStateChanged, type User } from 'firebase/auth';
 import Badge from '../components/Badge';
 import CacheCard from '../components/CacheCard';
@@ -84,7 +84,7 @@ function Profile() {
       <section className="section">
         <div className="section-header">
           <h2>Created caches</h2>
-          <span className="section-link">See all</span>
+          <Link to="/all-created" className="section-link">See all</Link>
         </div>
         <div className="cache-grid">
           {created.map((cache) => (
@@ -96,7 +96,7 @@ function Profile() {
       <section className="section">
         <div className="section-header">
           <h2>Recent finds</h2>
-          <span className="section-link">See all</span>
+          <Link to="/all-logged" className="section-link">See all</Link>
         </div>
         <div className="cache-grid">
           {found.map((cache) => (

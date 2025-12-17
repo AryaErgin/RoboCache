@@ -10,6 +10,8 @@ import About from './pages/About';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import Robocaching101 from './pages/Robocaching101';
+import AllCreatedCaches from './pages/AllCreatedCaches';
+import AllLoggedCaches from './pages/AllLoggedCaches';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
+        <Route path="/all-created" element={<AllCreatedCaches />} />
+        <Route path="/all-logged" element={<AllLoggedCaches />} />
         <Route path="/caches/:cacheId" element={<CacheDetails />} />
         <Route path="/create" element={<CreateCache />} />
         <Route path="/profile" element={<Profile />} />

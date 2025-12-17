@@ -1,29 +1,27 @@
-.explore-header { margin-bottom: 1rem; }
+.all-caches-page {
+  padding: 2rem;
+}
 
-.explore-map-section {
+.caches-header {
   margin-bottom: 2rem;
-  height: 500px;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--color-border);
 }
 
-.explore-map-section .map {
-  height: 100%;
+.caches-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
 }
 
-.status-text { margin-top: 0.5rem; }
-
-.explore-list-section {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.caches-header p {
+  margin: 0;
+  color: #c5c5c5;
+  font-size: 1.05rem;
 }
 
 .cache-grid-3x3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 /* Ensure exactly 3 columns on larger screens */
@@ -43,10 +41,6 @@
   .cache-grid-3x3 {
     grid-template-columns: 1fr;
   }
-  
-  .explore-map-section {
-    height: 350px;
-  }
 }
 
 .pagination {
@@ -54,6 +48,7 @@
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+  margin-top: 3rem;
   padding: 2rem 0;
   border-top: 1px solid var(--color-border);
 }
@@ -86,4 +81,8 @@
   font-size: 0.95rem;
   min-width: 120px;
   text-align: center;
+}
+
+.status-text {
+  margin: 1rem 0;
 }

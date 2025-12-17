@@ -3,7 +3,10 @@ import { useMemo } from 'react';
 import styles from './MapView.module.css';
 import type { Cache } from '../utils/types';
 
-interface Props { caches: Cache[] }
+interface Props { 
+  caches: Cache[]
+  onMarkerClick?: (cacheId: string) => void
+}
 
 const libraries: ('places')[] = ['places'];
 
@@ -59,7 +62,7 @@ const markerIcon =
     </svg>
   `);
 
-function MapView({ caches }: Props) {
+function MapView({ caches, onMarkerClick }: Props) {
   const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: apiKey || 'set-google-maps-key',
@@ -105,6 +108,7 @@ function MapView({ caches }: Props) {
               title={cache.title}
               icon={markerIcon}
               label={{ text: cache.title, className: styles.markerLabel, color: '#0f1624' }}
+              onClick={() => onMarkerClick?.(cache.id)}
             />
           ))}
         </GoogleMap>

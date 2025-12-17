@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button';
 import CacheCard from '../components/CacheCard';
@@ -77,7 +77,7 @@ function Home() {
           <div className="learn-box-body">
             <h3>Robocaching 101</h3>
             <p>New to RoboCache? Learn the basics: how to find caches, trade fairly, and log your finds.</p>
-            <span className="learn-box-cta">Read the guide →</span>
+            <span className="learn-box-cta">Read the guide </span>
           </div>
         </Link>
       </section>
