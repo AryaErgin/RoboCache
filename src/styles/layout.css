@@ -1,9 +1,15 @@
-.app-shell { min-height: 100vh; display: flex; flex-direction: column; background: var(--color-black); color: var(--color-white); }
-.app-main { flex: 1; padding-top: 1.5rem; }
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text-primary);
+}
 
-header, footer { width: 100%; }
+.app-main {
+  flex: 1;
+}
 
-@media (max-width: 768px) {
-  .page { padding: 2.5rem 1rem 3rem; }
-  .app-main { padding-top: 1rem; }
+header,
+footer {
+  width: 100%;
 }

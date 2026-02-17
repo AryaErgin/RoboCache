@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Authenticated views
+Disallow: /profile
+Disallow: /auth
+
+Sitemap: https://robocache.app/sitemap.xml

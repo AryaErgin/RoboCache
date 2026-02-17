@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 144" role="img" aria-labelledby="title desc">
+  <title id="title">RoboCache Lockup</title>
+  <desc id="desc">RoboCache symbol plus ROBOCACHE wordmark for primary brand usage.</desc>
+  <path fill="#141B26" fill-rule="evenodd" d="M72 12 122 39v54L72 132 22 93V39L72 12Zm0 14L35 46v40l37 38 37-38V46L72 26Z"/>
+  <path stroke="#FFD24A" stroke-linecap="round" stroke-linejoin="round" stroke-width="9" d="M72 67V44M72 67 53 78M72 67l19 11"/>
+  <circle cx="72" cy="39.5" r="7" fill="#FFD24A"/>
+  <circle cx="49" cy="81.5" r="7" fill="#FFD24A" fill-opacity=".82"/>
+  <circle cx="95" cy="81.5" r="7" fill="#FFD24A" fill-opacity=".82"/>
+  <rect x="62" y="58" width="20" height="20" rx="4.5" fill="#F3F8FF"/>
+  <path stroke="#141B26" stroke-linecap="round" stroke-width="2.8" d="M67 68h10"/>
+  <text x="152" y="92" fill="#141B26" font-family="Sora, Rajdhani, 'Segoe UI', Arial, sans-serif" font-size="78" font-weight="700" letter-spacing="2">ROBOCACHE</text>
+  <path fill="#FFD24A" d="M507 102h202v6H507z"/>
+</svg>

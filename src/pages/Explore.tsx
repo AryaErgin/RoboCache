@@ -63,9 +63,9 @@ function Explore() {
     <div className="page explore-page">
       <div className="explore-header">
         <div>
-          <p className="eyebrow">Map & filters</p>
-          <h1>Explore robotics caches near you</h1>
-          <p className="lede">Browse community drops with mystery robotics rewards, just discover and claim.</p>
+          <p className="eyebrow">FRC Robotics Geocaching Map & Filters</p>
+          <h1>Explore FIRST Robotics and FRC Caches Near You</h1>
+          <p className="lede">Browse geocaching-style mystery robotics drops with rewards designed for FIRST Robotics teams, FRC participants, and robotics enthusiasts. Find caches created by FRC Team INTEGRA 3646 and other teams.</p>
         </div>
       </div>
 

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">RoboCache Favicon</title>
+  <desc id="desc">Simplified RoboCache icon for small-size usage.</desc>
+  <path fill="#141B26" fill-rule="evenodd" d="M32 4 54 16v24L32 60 10 40V16L32 4Zm0 7L16 20v16l16 17 16-17V20L32 11Z"/>
+  <path stroke="#FFD24A" stroke-linecap="round" stroke-width="4" d="M32 32V21"/>
+  <circle cx="32" cy="18" r="4" fill="#FFD24A"/>
+  <rect x="26" y="26" width="12" height="12" rx="3" fill="#F3F8FF"/>
+</svg>

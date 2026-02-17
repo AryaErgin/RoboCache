@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">RoboCache Mark Construction Grid</title>
+  <desc id="desc">Construction grid showing proportional geometry for the RoboCache symbol.</desc>
+  <path stroke="#D6D9DF" stroke-width="1" d="M0 16h160M0 32h160M0 48h160M0 64h160M0 80h160M0 96h160M0 112h160M0 128h160M16 0v160M32 0v160M48 0v160M64 0v160M80 0v160M96 0v160M112 0v160M128 0v160M144 0v160"/>
+  <path fill="none" stroke="#141B26" stroke-width="3" d="M80 12 132 40v56L80 148 28 96V40L80 12Z"/>
+  <path fill="none" stroke="#141B26" stroke-width="3" d="M80 26 43 46v42l37 38 37-38V46L80 26Z"/>
+  <path stroke="#FFD24A" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="M80 80V53M80 80 58 93M80 80l22 13"/>
+  <circle cx="80" cy="48" r="6.5" fill="#FFD24A"/>
+  <circle cx="54" cy="96" r="6.5" fill="#FFD24A"/>
+  <circle cx="106" cy="96" r="6.5" fill="#FFD24A"/>
+  <rect x="71" y="71" width="18" height="18" rx="4" fill="#141B26"/>
+</svg>

@@ -1,6 +1,6 @@
 .cache-details-page .breadcrumbs { margin-bottom: 1rem; }
 .cache-header { display: flex; justify-content: space-between; gap: 1rem; padding: 1.5rem; background: var(--color-grey-800); border: 1px solid var(--color-border); border-radius: 14px; }
-.location { color: #c5c5c5; }
+.location { color: var(--color-text-secondary); }
 .meta { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .cache-section { margin-top: 1.5rem; background: var(--color-grey-800); border: 1px solid var(--color-border); border-radius: 12px; padding: 1rem; }
 .coord-box { display: grid; gap: 0.35rem; background: var(--color-grey-600); padding: 0.75rem; border-radius: 10px; }

@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import '../styles/pages/FAQ.css';
+import geocachingImg from '../assets/geocaching-101.jpg';
 
 function Robocaching101() {
   return (
     <div className="page faq-page">
       <h1>Robocaching 101</h1>
       <div className="card">
-        <img src="/assets/filler.svg" alt="robocaching" style={{ width: '100%', maxHeight: 220, objectFit: 'cover', borderRadius: 6 }} />
+        <img src={geocachingImg} alt="robocaching" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '6px 6px 0 0' }} />
         <div style={{ padding: '1.25rem' }}>
           <h2>Learn about robocaching</h2>
           <p>Robocaching is a community-driven treasure hunt where participants find hidden containers and exchange small robotics-themed items.</p>

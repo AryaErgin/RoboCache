@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">RoboCache Mark Animated</title>
+  <desc id="desc">Animated RoboCache mark with subtle node pulse for hover and hero contexts.</desc>
+  <path fill="#141B26" fill-rule="evenodd" d="M64 8 108 32v48L64 120 20 80V32L64 8Zm0 12L31 38v36l33 34 33-34V38L64 20Z"/>
+  <path stroke="#FFD24A" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="M64 64V44M64 64 47 74M64 64l17 10"/>
+  <circle cx="64" cy="40" r="6.5" fill="#FFD24A">
+    <animate attributeName="r" values="6.5;7.5;6.5" dur="2.1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="43" cy="77" r="6.5" fill="#FFD24A" fill-opacity=".82">
+    <animate attributeName="fill-opacity" values=".65;1;.65" dur="2.3s" begin=".2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="85" cy="77" r="6.5" fill="#FFD24A" fill-opacity=".82">
+    <animate attributeName="fill-opacity" values=".65;1;.65" dur="2.3s" begin=".7s" repeatCount="indefinite"/>
+  </circle>
+  <rect x="55" y="55" width="18" height="18" rx="4" fill="#F3F8FF">
+    <animate attributeName="opacity" values=".9;1;.9" dur="2.2s" repeatCount="indefinite"/>
+  </rect>
+  <path stroke="#141B26" stroke-linecap="round" stroke-width="2.5" d="M60 64h8"/>
+</svg>

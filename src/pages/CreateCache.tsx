@@ -114,7 +114,7 @@ function CreateCache() {
       </form>
       {showAuthPopup && (
         <div style={{ position: 'fixed', left: 0, right: 0, top: 12, display: 'flex', justifyContent: 'center', pointerEvents: 'none', zIndex: 9999 }}>
-          <div style={{ pointerEvents: 'auto', background: '#222', color: '#fff', padding: '10px 18px', borderRadius: 8, boxShadow: '0 6px 24px rgba(0,0,0,0.18)', fontWeight: 600 }}>
+          <div style={{ pointerEvents: 'auto', background: 'var(--color-background-elevated)', color: 'var(--color-text-primary)', padding: '10px 18px', borderRadius: 8, boxShadow: '0 6px 24px rgba(0,0,0,0.18)', fontWeight: 600 }}>
             Please sign up or log in to create a cache — redirecting…
           </div>
         </div>

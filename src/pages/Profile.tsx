@@ -110,13 +110,13 @@ function Profile() {
           onClick={() => auth.signOut()}
           style={{
             padding: '14px 40px',
-            background: 'linear-gradient(90deg, #ff4b2b 0%, #ff416c 100%)',
-            color: '#fff',
+            background: 'var(--color-error)',
+            color: 'var(--color-text-primary)',
             border: 'none',
             borderRadius: 24,
             fontWeight: 600,
             fontSize: 18,
-            boxShadow: '0 2px 12px rgba(255,65,108,0.15)',
+            boxShadow: '0 2px 12px color-mix(in srgb, var(--color-error) 30%, transparent)',
             cursor: 'pointer',
             transition: 'background 0.2s',
             letterSpacing: 1,

@@ -13,7 +13,7 @@
 
 .caches-header p {
   margin: 0;
-  color: #c5c5c5;
+  color: var(--color-text-secondary);
   font-size: 1.05rem;
 }
 
@@ -77,7 +77,7 @@
 }
 
 .pagination-info {
-  color: #c5c5c5;
+  color: var(--color-text-secondary);
   font-size: 0.95rem;
   min-width: 120px;
   text-align: center;

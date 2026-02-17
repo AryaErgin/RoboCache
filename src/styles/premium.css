@@ -1,0 +1,593 @@
+.rc-home {
+  padding-bottom: clamp(3.5rem, 8vw, 6rem);
+}
+
+.rc-container {
+  width: var(--size-content);
+  margin-inline: auto;
+}
+
+.rc-section {
+  padding-top: var(--space-section);
+}
+
+.rc-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--gradient-card);
+  box-shadow: var(--shadow-soft);
+}
+
+.rc-heading {
+  margin: 0;
+  color: var(--color-text-primary);
+  letter-spacing: -0.03em;
+}
+
+.rc-paragraph {
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.rc-paragraph-muted {
+  color: var(--color-text-secondary);
+}
+
+.rc-eyebrow {
+  margin: 0;
+  color: var(--color-accent-secondary);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.rc-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  padding: 0.8rem 1.25rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    box-shadow var(--motion-duration-fast) var(--motion-ease),
+    background-color var(--motion-duration-fast) var(--motion-ease),
+    color var(--motion-duration-fast) var(--motion-ease),
+    border-color var(--motion-duration-fast) var(--motion-ease),
+    transform var(--motion-duration-fast) var(--motion-ease);
+}
+
+.rc-button:hover {
+  transform: translateY(-2px);
+}
+
+.rc-button-primary {
+  color: var(--color-background-primary);
+  background: var(--color-accent-primary);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--color-accent-primary) 35%, transparent);
+}
+
+.rc-button-primary:hover {
+  text-decoration: none;
+}
+
+.rc-button-secondary {
+  color: var(--color-text-primary);
+  background: var(--color-background-elevated);
+  border-color: var(--color-border);
+}
+
+.rc-button-secondary:hover {
+  border-color: var(--color-accent-secondary);
+  text-decoration: none;
+}
+
+.rc-button-ghost {
+  color: var(--color-text-primary);
+  background: color-mix(in srgb, var(--color-background-elevated) 76%, transparent);
+  border-color: var(--color-border);
+}
+
+.rc-button-ghost:hover {
+  border-color: var(--color-accent-primary);
+  text-decoration: none;
+}
+
+.rc-hero {
+  width: var(--size-content);
+  margin-inline: auto;
+  padding-top: clamp(2.2rem, 9vh, 5rem);
+}
+
+.rc-hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr minmax(260px, 0.8fr);
+  gap: clamp(1.1rem, 3vw, 2rem);
+  align-items: stretch;
+}
+
+.rc-hero-copy {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.25rem, 3.6vw, 2.4rem);
+  background:
+    radial-gradient(
+      circle at 4% 8%,
+      color-mix(in srgb, var(--color-accent-primary) 13%, transparent) 0%,
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 95% 95%,
+      color-mix(in srgb, var(--color-accent-secondary) 10%, transparent) 0%,
+      transparent 42%
+    ),
+    var(--gradient-card);
+  box-shadow: var(--shadow-soft);
+}
+
+.rc-hero-title {
+  margin-top: 1rem;
+  font-size: clamp(1.9rem, 4.7vw, 3.4rem);
+  max-width: 14ch;
+}
+
+.rc-hero-lede {
+  margin-top: 1.2rem;
+  max-width: 64ch;
+  color: var(--color-text-secondary);
+}
+
+.rc-hero-subtitle {
+  margin-top: 0.85rem;
+  color: var(--color-text-primary);
+}
+
+.rc-hero-actions {
+  margin-top: 1.4rem;
+  display: inline-flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.rc-hero-panel {
+  padding: clamp(1.1rem, 2.8vw, 1.7rem);
+  display: grid;
+  align-content: center;
+}
+
+.rc-hero-panel h2 {
+  margin: 0;
+  font-size: 1.08rem;
+  letter-spacing: -0.01em;
+}
+
+.rc-hero-stats {
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.95rem;
+}
+
+.rc-hero-stats div {
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+  padding-top: 0.75rem;
+}
+
+.rc-hero-stats dt {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+}
+
+.rc-hero-stats dd {
+  margin: 0.3rem 0 0;
+  color: var(--color-text-primary);
+  line-height: 1.35;
+}
+
+.rc-section-head {
+  max-width: 66ch;
+}
+
+.rc-section-head h2 {
+  margin: 0.8rem 0 0;
+  font-size: clamp(1.45rem, 3.2vw, 2.25rem);
+}
+
+.rc-section-head p {
+  margin: 0.95rem 0 0;
+}
+
+.rc-step-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.rc-step-card {
+  padding: 1.15rem;
+}
+
+.rc-step-index {
+  margin: 0;
+  color: var(--color-accent-primary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.rc-step-card h3 {
+  margin: 0.7rem 0 0;
+  font-size: 1.03rem;
+}
+
+.rc-step-card p {
+  margin: 0.6rem 0 0;
+  color: var(--color-text-secondary);
+}
+
+.rc-map-stack {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.rc-map-pill-group {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.rc-map-pill-group span {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 0.65rem;
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  background: color-mix(in srgb, var(--color-background-elevated) 72%, transparent);
+}
+
+.rc-map-card {
+  padding: 0.85rem;
+  min-height: clamp(19rem, 44vw, 24rem);
+}
+
+.rc-map-skeleton {
+  border: 1px dashed var(--color-border);
+  border-radius: calc(var(--radius-xl) - 0.35rem);
+  min-height: clamp(17rem, 38vw, 22rem);
+  display: grid;
+  place-items: center;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.rc-map-scene {
+  position: relative;
+  min-height: clamp(17rem, 38vw, 22rem);
+  height: 100%;
+  border-radius: calc(var(--radius-xl) - 0.35rem);
+  background:
+    radial-gradient(
+      circle at 8% 5%,
+      color-mix(in srgb, var(--color-accent-primary) 14%, transparent) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 92% 88%,
+      color-mix(in srgb, var(--color-accent-secondary) 14%, transparent) 0%,
+      transparent 50%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-background-secondary) 92%, transparent) 0%,
+      var(--color-background-primary) 100%
+    );
+  overflow: hidden;
+}
+
+.rc-map-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--color-border) 55%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-border) 55%, transparent) 1px, transparent 1px);
+  background-size: 2.2rem 2.2rem;
+  mask-image: linear-gradient(to bottom, transparent 2%, black 24%, black 92%, transparent 100%);
+}
+
+.rc-map-routes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.rc-map-routes line {
+  stroke: color-mix(in srgb, var(--color-accent-primary) 46%, transparent);
+  stroke-width: 0.24;
+  stroke-linecap: round;
+  stroke-dasharray: 0.8 0.55;
+}
+
+.rc-map-node {
+  position: absolute;
+  left: var(--node-x);
+  top: var(--node-y);
+  width: 0;
+  height: 0;
+}
+
+.rc-map-node-dot {
+  position: absolute;
+  left: -0.35rem;
+  top: -0.35rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-primary);
+  box-shadow:
+    0 0 0 0.24rem color-mix(in srgb, var(--color-accent-primary) 25%, transparent),
+    0 0 1.2rem color-mix(in srgb, var(--color-accent-primary) 35%, transparent);
+}
+
+.rc-map-node-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(var(--label-x), var(--label-y));
+  display: grid;
+  gap: 0.08rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  padding: 0.38rem 0.48rem;
+  background: color-mix(in srgb, var(--color-background-secondary) 86%, transparent);
+  color: var(--color-text-secondary);
+  font-size: 0.72rem;
+  line-height: 1.2;
+  max-width: min(12rem, 42vw);
+}
+
+.rc-map-node-label strong {
+  color: var(--color-text-primary);
+  font-size: 0.77rem;
+  font-weight: 600;
+}
+
+.rc-map-live-tag {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-background-elevated) 84%, transparent);
+  color: var(--color-text-secondary);
+  padding: 0.32rem 0.6rem;
+  font-size: 0.78rem;
+}
+
+.rc-map-live-indicator {
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-secondary);
+}
+
+.rc-impact-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.rc-impact-card {
+  padding: 1.25rem;
+}
+
+.rc-impact-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.rc-impact-card p {
+  margin: 0.6rem 0 0;
+  color: var(--color-text-secondary);
+}
+
+.rc-about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 360px);
+  gap: 1rem;
+  align-items: start;
+}
+
+.rc-about-card {
+  padding: clamp(1.1rem, 3vw, 1.7rem);
+}
+
+.rc-about-card h2 {
+  margin-top: 0.8rem;
+}
+
+.rc-about-card p {
+  margin-top: 0.8rem;
+}
+
+.rc-about-actions {
+  margin-top: 1.1rem;
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.rc-about-media {
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+}
+
+.rc-about-media img {
+  width: min(240px, 78%);
+  max-height: 340px;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  filter: drop-shadow(0 0 1.4rem color-mix(in srgb, var(--color-accent-primary) 20%, transparent));
+}
+
+.rc-machine-block {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: clamp(1rem, 3vw, 1.6rem);
+  background: var(--gradient-card);
+}
+
+.rc-machine-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.95rem;
+}
+
+.rc-machine-grid article {
+  border: 1px solid color-mix(in srgb, var(--color-border) 68%, transparent);
+  border-radius: var(--radius-md);
+  padding: 0.8rem;
+  background: color-mix(in srgb, var(--color-background-elevated) 64%, transparent);
+}
+
+.rc-machine-grid h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.rc-machine-grid p {
+  margin-top: 0.45rem;
+  color: var(--color-text-secondary);
+}
+
+.rc-faq-list {
+  margin-top: 1.2rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.rc-faq-card {
+  padding: 1rem;
+}
+
+.rc-faq-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.rc-faq-card p {
+  margin-top: 0.55rem;
+  color: var(--color-text-secondary);
+}
+
+.rc-faq-more {
+  margin-top: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.rc-cta-shell {
+  padding-bottom: 0.3rem;
+}
+
+.rc-cta-card {
+  padding: clamp(1.25rem, 4vw, 2rem);
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      color-mix(in srgb, var(--color-accent-primary) 10%, transparent) 0%,
+      transparent 44%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      color-mix(in srgb, var(--color-accent-secondary) 10%, transparent) 0%,
+      transparent 44%
+    ),
+    var(--gradient-card);
+}
+
+.rc-cta-card h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 3.7vw, 2rem);
+}
+
+.rc-cta-card p {
+  margin: 0.8rem auto 0;
+  max-width: 60ch;
+}
+
+.rc-cta-actions {
+  margin-top: 1.15rem;
+  display: flex;
+  gap: 0.65rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .rc-hero-grid,
+  .rc-about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .rc-map-card {
+    min-height: 20rem;
+  }
+
+  .rc-step-grid,
+  .rc-impact-grid,
+  .rc-machine-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .rc-step-grid,
+  .rc-impact-grid,
+  .rc-machine-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rc-hero-actions,
+  .rc-about-actions,
+  .rc-cta-actions {
+    width: 100%;
+  }
+
+  .rc-button {
+    flex: 1 1 auto;
+    min-width: 10rem;
+  }
+
+  .rc-map-node-label {
+    font-size: 0.65rem;
+    max-width: min(9rem, 52vw);
+  }
+
+  .rc-map-node-label strong {
+    display: none;
+  }
+
+  .rc-map-routes {
+    opacity: 0.75;
+  }
+
+  .rc-map-live-tag {
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+}
